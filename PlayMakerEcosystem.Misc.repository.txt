@@ -1,4 +1,0 @@
-{
-"__ECO__":"__REPOSITORY__",
-"Unity":"5"
-}
