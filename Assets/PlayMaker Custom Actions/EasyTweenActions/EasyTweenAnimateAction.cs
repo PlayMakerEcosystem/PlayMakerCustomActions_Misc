@@ -1,4 +1,6 @@
-﻿using HutongGames.PlayMaker;
+﻿/*--- __ECO__ __PLAYMAKER__ __ACTION__ ---*/
+
+using HutongGames.PlayMaker;
 using UnityEngine;
 
 namespace Game.Scripts.CustomPlayMakerActions.EasyTweenActions

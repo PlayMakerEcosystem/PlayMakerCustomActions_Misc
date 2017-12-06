@@ -1,3 +1,5 @@
+/*--- __ECO__ __PLAYMAKER__ __ACTION__ ---*/
+
 using HutongGames.PlayMaker;
 using UnityEngine;
 

@@ -1,4 +1,13 @@
-﻿using System.Diagnostics;
+﻿/*--- __ECO__ __PLAYMAKER__ __ACTION__ ---*/
+/*---
+EcoMetaStart
+{
+"script dependancies":["Assets/PlayMaker Custom Actions/TablePro/Editor/GenerateTableActionActionEditor.cs"]
+}
+EcoMetaEnd
+---*/
+
+using System.Diagnostics;
 using System.Xml;
 using HutongGames.PlayMaker;
 using HutongGames.PlayMaker.Actions;
