@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Game.Scripts.CustomPlayMakerActions.EasyTweenActions
 {
     [ActionCategory("EasyTween")]
-    public class EasyTweenAnimateAction : FsmStateAction
+    public class EasyTweenAnimate : FsmStateAction
     {
         [CheckForComponent(typeof(EasyTween))]
         [HutongGames.PlayMaker.Tooltip("The game object that has easy tween on")]
