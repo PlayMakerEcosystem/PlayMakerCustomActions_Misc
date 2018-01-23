@@ -82,10 +82,6 @@ namespace HutongGames.PlayMaker.Actions
 			
 		}
 
-		public override void OnUpdate()
-		{
-			DoBuildString();
-		}
 		
 		void DoBuildString()
 		{
@@ -174,6 +170,8 @@ namespace HutongGames.PlayMaker.Actions
 			
 
 			storeResult.Value = ToString();
+
+			Fsm.Event (doneEvent);
 		
 		}
 

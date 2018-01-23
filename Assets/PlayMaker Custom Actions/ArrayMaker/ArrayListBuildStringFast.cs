@@ -47,6 +47,7 @@ namespace HutongGames.PlayMaker.Actions
 		[ActionSection("Event")]
 		[UIHint(UIHint.FsmEvent)]
 		public FsmEvent doneEvent;
+
 		[UIHint(UIHint.FsmEvent)]
 		[Tooltip("The event if error")]
 		public FsmEvent failureEvent;
@@ -77,14 +78,11 @@ namespace HutongGames.PlayMaker.Actions
 			if ( SetUpArrayListProxyPointer(Fsm.GetOwnerDefaultTarget(gameObject),reference.Value) )
 				DoBuildString();
 
-			    Finish();
+
+			Finish();
 			
 		}
 
-		public override void OnUpdate()
-		{
-			DoBuildString();
-		}
 		
 		void DoBuildString()
 		{
@@ -171,6 +169,7 @@ namespace HutongGames.PlayMaker.Actions
 
 			storeResult.Value = ToString();
 		
+			Fsm.Event (doneEvent);
 		}
 
 		public void Append( string value )
