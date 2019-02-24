@@ -101,11 +101,17 @@ namespace HutongGames.PlayMaker.Actions
 			ContactFilter2D filter = new ContactFilter2D();
 			filter.NoFilter();
 			
+#if UNITY_2018_1_OR_NEWER
 			List<Collider2D> results = new List<Collider2D>();
 			col.OverlapCollider(filter, results);
-
+#else
+			Collider2D[] results = new Collider2D[99];
+			col.OverlapCollider(filter, results);
+#endif
+			
 			foreach (var result in results)
 			{
+				if(result == null) continue;
 				GameObject go = result.gameObject;
 
 				//skip triggers if set to ignore them
