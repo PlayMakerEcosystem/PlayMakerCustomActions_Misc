@@ -101,7 +101,7 @@ namespace HutongGames.PlayMaker.Actions
 			ContactFilter2D filter = new ContactFilter2D();
 			filter.NoFilter();
 			
-#if UNITY_2018_1_OR_NEWER
+#if UNITY_2019_1_OR_NEWER
 			List<Collider2D> results = new List<Collider2D>();
 			col.OverlapCollider(filter, results);
 #else
