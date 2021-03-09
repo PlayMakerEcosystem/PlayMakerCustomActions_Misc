@@ -37,6 +37,10 @@ namespace HutongGames.PlayMaker.Actions
 		[Tooltip("Deletes previous array keys in Playerprefs then saves - fresh save ** slower but safer, will not work if startIndex/endIndex are >0")]
 		public FsmBool cleanPass;
 
+        [Tooltip("set the variable to true on the state before entering this state to reset the iterator, necessary if you are using this several times.")]
+        [UIHint(UIHint.Variable)]
+        public FsmBool reset;
+
 		[ActionSection("Result")]
 		
 		[UIHint(UIHint.Variable)]
@@ -63,8 +67,9 @@ namespace HutongGames.PlayMaker.Actions
 			startIndex = null;
 			endIndex = null;
 			gameObject = null;
-			
-			failureEvent = null;
+
+            reset = null;
+            failureEvent = null;
 			finishedEvent = null;
 
 			cleanPass = true;
@@ -86,9 +91,14 @@ namespace HutongGames.PlayMaker.Actions
 					
 					Finish();
 				}
-		
 
-			if ( SetUpArrayListProxyPointer(Fsm.GetOwnerDefaultTarget(gameObject),reference.Value) )
+                if (reset.Value)
+            {
+                reset.Value = false;
+                nextItemIndex = -1;
+            }
+
+            if ( SetUpArrayListProxyPointer(Fsm.GetOwnerDefaultTarget(gameObject),reference.Value) )
 				GetItemAtIndex();
 
 
